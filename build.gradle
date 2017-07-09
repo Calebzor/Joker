@@ -17,3 +17,7 @@ allprojects {
         jcenter()
     }
 }
+
+
+task connectedTestWithBackend(dependsOn: ':backend:connectedTestWithBackend') << {
+}

@@ -40,3 +40,10 @@ dependencies {
 	compile 'com.google.code.findbugs:jsr305:2.0.1'
 	compile 'com.google.api-client:google-api-client-android:1.22.0'
 }
+
+task connectedTestWithBackend(dependsOn: [':backend:connectedTestWithBackend',
+										  'connectedAndroidTest', 'stopServer']) << {
+}
+
+task stopServer(dependsOn: ':backend:appengineStopServer') << {
+}
