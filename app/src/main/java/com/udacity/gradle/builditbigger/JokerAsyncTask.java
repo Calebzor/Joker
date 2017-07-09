@@ -15,6 +15,7 @@ import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 
 import java.io.IOException;
 
+import static com.udacity.gradle.builditbigger.Constants.ERROR_MESSAGE;
 import static com.udacity.gradle.builditbigger.Constants.LOG_TAG;
 import static com.udacity.gradle.builditbigger.MainActivity.startJokerActivity;
 
@@ -51,7 +52,7 @@ class JokerAsyncTask extends AsyncTask<Pair<Context, ProgressBar>, Void, String>
     @SafeVarargs
     @Override
     protected final String doInBackground(Pair<Context, ProgressBar>... params) {
-        String result = "An error has occurred!";
+        String result = ERROR_MESSAGE;
 
         try {
             JokerApi.GetJavaJoke javaJoke = mJokerApi.getJavaJoke();
