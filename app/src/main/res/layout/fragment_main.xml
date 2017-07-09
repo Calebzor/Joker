@@ -9,6 +9,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivityFragment">
 
+	<ProgressBar
+		android:id="@+id/progressBar"
+		style="?android:attr/progressBarStyle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:visibility="gone"
+		android:layout_centerInParent="true"/>
+
     <TextView
         android:id="@+id/instructions_text_view"
         android:layout_width="wrap_content"
@@ -21,8 +29,15 @@
         android:layout_below="@+id/instructions_text_view"
 		android:onClick="tellJavaJoke"
         android:text="@string/button_text"
+		android:id="@+id/tellJokeButton" />
 
-        />
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/tellJokeButton"
+		android:onClick="tellJavaJokeFromInternet"
+		android:text="@string/button_internet_text"
+		android:id="@+id/tellJokeButtonFromInternet" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
