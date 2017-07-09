@@ -7,13 +7,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.JavaJoker;
 
 public class MainActivity extends AppCompatActivity {
+
+    private JavaJoker mJavaJoker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mJavaJoker = new JavaJoker();
     }
 
 
@@ -39,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view) {
-        Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
+    public void tellJavaJoke(View view) {
+        String randomJavaJoke = mJavaJoker.getRandomJavaJoke();
+        Toast.makeText(this, randomJavaJoke, Toast.LENGTH_LONG).show();
     }
 
 
