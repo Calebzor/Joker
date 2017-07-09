@@ -1,4 +1,4 @@
-package com.udacity.gradle.builditbigger;
+package com.example.vatam.joker;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,9 +19,9 @@ import static com.example.android.jokerlib.Constants.JOKER_INTENT_EXTRA_NAME;
 @SuppressWarnings("squid:MaximumInheritanceDepth")
 public class MainActivity extends AppCompatActivity {
 
-    private JavaJoker mJavaJoker;
-    private Button mInternetJokeButton;
-    private ProgressBar mProgressBar;
+    protected JavaJoker mJavaJoker;
+    protected Button mInternetJokeButton;
+    protected ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

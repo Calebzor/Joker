@@ -1,4 +1,4 @@
-package com.udacity.gradle.builditbigger;
+package com.example.vatam.joker;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -15,18 +15,18 @@ import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 
 import java.io.IOException;
 
-import static com.udacity.gradle.builditbigger.Constants.ERROR_MESSAGE;
-import static com.udacity.gradle.builditbigger.Constants.LOG_TAG;
-import static com.udacity.gradle.builditbigger.MainActivity.startJokerActivity;
+import static com.example.vatam.joker.Constants.ERROR_MESSAGE;
+import static com.example.vatam.joker.Constants.LOG_TAG;
+import static com.example.vatam.joker.MainActivity.startJokerActivity;
 
-class JokerAsyncTask extends AsyncTask<Pair<Context, ProgressBar>, Void, String> {
+public class JokerAsyncTask extends AsyncTask<Pair<Context, ProgressBar>, Void, String> {
 
     private JokerApi mJokerApi;
     private Context mContext;
     private ProgressBar mProgressBar;
 
     @SafeVarargs
-    JokerAsyncTask(Pair<Context, ProgressBar>... params) {
+    public JokerAsyncTask(Pair<Context, ProgressBar>... params) {
         mContext = params[0].first;
         mProgressBar = params[0].second;
         JokerApi.Builder builder = new JokerApi.Builder(AndroidHttp.newCompatibleTransport(),new AndroidJsonFactory(),null).

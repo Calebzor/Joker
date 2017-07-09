@@ -1,4 +1,4 @@
-package com.udacity.gradle.builditbigger;
+package com.example.vatam.joker;
 
 public class Constants {
 

@@ -1,6 +1,7 @@
-package com.udacity.gradle.builditbigger;
+package com.example.vatam.joker;
 
 import android.support.test.espresso.ViewInteraction;
+import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -14,7 +15,7 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static com.udacity.gradle.builditbigger.Constants.ERROR_MESSAGE;
+import static com.example.vatam.joker.Constants.ERROR_MESSAGE;
 import static org.hamcrest.Matchers.not;
 
 @RunWith(AndroidJUnit4.class)
@@ -26,7 +27,8 @@ public class MainActivityTest {
 
     @Test
     public void mainActivityTest() {
-        ViewInteraction appCompatButton = onView(withId(R.id.tellJokeButtonFromInternet)).check(
+        ViewInteraction appCompatButton = onView(
+                ViewMatchers.withId(R.id.tellJokeButtonFromInternet)).check(
                 matches(isDisplayed()));
         appCompatButton.perform(click());
 
