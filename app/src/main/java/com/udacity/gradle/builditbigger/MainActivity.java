@@ -1,14 +1,18 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.JavaJoker;
+import com.example.android.jokerlib.JokerActivity;
 
+import static com.example.android.jokerlib.Constants.JOKER_INTENT_EXTRA_NAME;
+
+@SuppressWarnings("squid:MaximumInheritanceDepth")
 public class MainActivity extends AppCompatActivity {
 
     private JavaJoker mJavaJoker;
@@ -45,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJavaJoke(View view) {
         String randomJavaJoke = mJavaJoker.getRandomJavaJoke();
-        Toast.makeText(this, randomJavaJoke, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(MainActivity.this, JokerActivity.class);
+        intent.putExtra(JOKER_INTENT_EXTRA_NAME, randomJavaJoke);
+        startActivity(intent);
     }
 
 
